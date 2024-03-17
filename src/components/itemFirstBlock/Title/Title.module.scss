@@ -1,0 +1,23 @@
+@use '../../../styles/var.scss';
+@use '../../../styles/mix.scss';
+
+.titleContainer {
+  position: relative;
+  height: fit-content;
+
+  h3 {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 100%;
+
+    @include mix.text(400);
+
+    span {
+      @include mix.text(700);
+
+    }
+  }
+}

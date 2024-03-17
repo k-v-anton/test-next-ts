@@ -1,95 +1,138 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Block } from '@/components/block/Block'
+import { ItemFirstBlock } from '@/components/itemFirstBlock/ItemFirstBlock'
+import styles from './page.module.scss'
+
+import { CardContainer } from '@/components/cardContainer/CardContainer'
+import { CardInhalate } from '@/components/cardInhalait/CardInhalate'
+import { Arrow } from './svg/Arrow/Arrow'
+import { User } from './svg/User/User'
 
 export default function Home() {
+  type FirstBlockElementType = {
+    id: number
+    firstTitle: string
+    secondTitle: string
+    body: string
+    icon: () => JSX.Element
+    reverse: boolean
+  }
+
+  const dataFirstBlock: FirstBlockElementType[] = [
+    {
+      id: 1,
+      firstTitle: 'ХОБЛ болеют',
+      secondTitle: 'преимущественно мужчины?',
+      body: 'В десятилетнем исследовании «Генетическая эпидемиология ХОБЛ» (COPDGene) среди пациентов с ХОБЛ, диагностированной до 55 лет, было выявлено преобладание...',
+      icon: User,
+      reverse: false,
+    },
+    {
+      id: 2,
+      firstTitle: 'не наличие заболевания, а обострения?',
+      secondTitle: 'Опасно',
+      body: 'Большинство пациентов с ХОБЛ столкнется с обострениями: как минимум одно среднетяжелое или тяжелое обострение случится в течение...',
+      icon: Arrow,
+      reverse: true,
+    },
+  ]
+
+  const dataSecondBlock = {
+    firstLine: [
+      {
+        id: 1,
+        title: 'Ингаляционный',
+        subtitle: 'антихолинергик',
+        text: 'Ингибирует бронхоконстрикторные эффекты ацетилхолина, вступая с ним в конкурентный антагонизм за взаимодействие с эффекторными мускариновыми рецепторами, дополняет и потенцирует эффект β2-агонистов1',
+      },
+      {
+        id: 2,
+        title: 'Ингаляционный',
+        subtitle: 'β2-агонист',
+        text: 'Вызывает бронходилатацию посредством релаксации гладкомышечных клеток бронхов независимо от характера констриктивных стимулов, т. е. выступают в качестве функциональных антагонистов бронхоконстрикции',
+      },
+      {
+        id: 3,
+        title: 'Ингаляционный',
+        subtitle: 'глюкокортикостероид (ИГКС)',
+        text: 'Снижает частоту обострений, особенно в сочетании с ДДБА, подавляют хроническое воспаление при астме и снижают гиперреактивность дыхательных путей',
+      },
+    ],
+    secondLine: [
+      'Пациентам с ХОБЛ рекомендуется комбинирование бронходилататоров с разными механизмами действия; Назначение 2-х бронходилататоров из группы длительнодействующих β2-агонистов (ДДБА) и длительнодействующих антихолинергиков (ДДАХ), действие которых дополняет и усиливает друг друга1.',
+      'Пациентам с ХОБЛ и частыми обострениями (≥2 среднетяжелых обострений в течение 1 года/1 тяжелое обострение, потребовавшее госпитализации) рекомендуется назначение ИГКС в дополнение к ДДБА; Последние исследования показали, что амбулаторное применение ИГКС/ДДБА у пациентов с ХОБЛ снижает госпитальную летальность по сравнению с пациентами, принимавшими только ДДБА (8,1% vs 13,2%)1.',
+    ],
+  }
+
+  const data = [
+    {
+      id: 1,
+      blockTitle: 'ХОБЛ: мифы и реальность',
+    },
+    {
+      id: 2,
+      blockTitle: 'Терапия ХОБЛ: что в фокусе?',
+    },
+  ]
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      <div className={styles.container}>
+        {data.map((block) => (
+          <>
+            {block.id === 1 && (
+              <Block key={block.id} title={block.blockTitle}>
+                {dataFirstBlock.map((item) => (
+                  <ItemFirstBlock
+                    key={item.id}
+                    iconItem={item.icon}
+                    firstTitle={item.firstTitle}
+                    secondTitle={item.secondTitle}
+                    body={item.body}
+                    reverse={item.reverse}
+                  />
+                ))}
+              </Block>
+            )}
+            {block.id === 2 && (
+              <Block key={block.id} title={block.blockTitle}>
+                <div className={styles.text1}>
+                  Даже 1 среднетяжелое обострение — сигнал к увеличению объема
+                  терапии
+                </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+                <div className={styles.text2}>
+                  Приоритетные направления фармакотерапевтической стратегии при
+                  ХОБЛ1:
+                </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+               <div className={styles.grid}>
+                  <div className={styles.lineOne}>
+                    <div className={`${styles.arrow} ${styles.first}`}></div>
+                    <div className={`${styles.arrow} ${styles.second}`}></div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+                    {dataSecondBlock.firstLine.map((card) => (
+                      <CardInhalate
+                        key={card.id}
+                        id={card.id}
+                        title={card.title}
+                        subTitle={card.subtitle}
+                        text={card.text}
+                      />
+                    ))}
+                  </div>
+                  <div className={styles.lineTwo}>
+                    {dataSecondBlock.secondLine.map((card, index) => (
+                      <CardContainer key={index}>
+                        <p>{card}</p>
+                      </CardContainer>
+                    ))}
+                  </div>
+               </div>
+              </Block>
+            )}
+          </>
+        ))}
       </div>
     </main>
-  );
+  )
 }

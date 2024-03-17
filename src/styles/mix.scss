@@ -1,0 +1,22 @@
+@use './var.scss';
+
+@mixin title {
+  font-family: Century Gothic;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var.$BLUE;
+}
+
+@mixin text($weight) {
+  font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: $weight;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: var.$BLUE;
+
+}

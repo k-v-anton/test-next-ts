@@ -1,0 +1,58 @@
+@mixin text($fw, $fz, $lh) {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fz;
+  line-height: $lh;
+  text-align: center;
+  color: #01457A
+}
+
+.iconContainer {
+  position: relative;
+  width: 178px;
+  height: 145px;  
+}
+
+.iconNumber {
+  position: absolute;
+  right: 15%;
+  bottom: 5%;
+  @include text(700, 48px, 65px)
+}
+
+.title {
+  @include text(500, 28px, 38px);
+
+  @media (max-width: 1200px) {
+    @include text(500, 24px, 33px)
+  }
+  
+  @media (max-width: 1024px) {
+    @include text(500, 20px, 28px)
+  }
+}
+
+.subtitle {
+  @include text(700, 28px, 38px);
+
+  @media (max-width: 1200px) {
+    @include text(700, 24px, 33px)
+  }
+  
+  @media (max-width: 1024px) {
+    @include text(700, 20px, 28px)
+  }
+}
+
+.text {
+  @include text(400, 24px, 33px);
+
+  @media (max-width: 1200px) {
+    @include text(500, 20px, 28px)
+  }
+
+  @media (max-width: 1024px) {
+    @include text(500, 18px, 26px)
+  }
+}

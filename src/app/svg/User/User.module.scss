@@ -1,0 +1,11 @@
+@use '../../../styles/var.scss';
+
+.svg {
+  width: 41px;
+  height: 39px;
+  fill: none;
+
+  path {
+    fill: var.$BLUE;
+  }
+}
