@@ -8,7 +8,7 @@
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  transform: translate(50%, -50%);
+  transform: translate(25%, -25%);
   background-color: var.$BLUE;
   border: none;
   transition: background-color .3s ease;
@@ -19,10 +19,7 @@
   &:hover {
     background-color: var.$LIGHT_GREEN;
   }
-
 }
-
-
 
 .popup {
   position: fixed;
@@ -39,7 +36,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .active {
@@ -48,7 +44,21 @@
   scale: 1;
 }
 
+.popupConteon {
+  background-color: var.$WHITE;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 38px;
+  gap: 40px;
+  position: relative;
+  max-width: 1290px;
+  border: 1px solid #01457A;
+  box-shadow: 0px 0px 25px rgba(142, 160, 173, 0.35);
+  border-radius: 20px;
+  margin: 45px;
 
+  @include mix.text(400);
+}
 
 .close {
   position: absolute;

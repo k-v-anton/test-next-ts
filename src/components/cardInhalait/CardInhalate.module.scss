@@ -14,13 +14,23 @@
   position: relative;
   width: 178px;
   height: 145px;  
+
+  @media (max-width: 768px) {
+    width: 100px;
+  }
 }
 
 .iconNumber {
   position: absolute;
   right: 15%;
   bottom: 5%;
-  @include text(700, 48px, 65px)
+  @include text(700, 48px, 65px);
+
+  @media (max-width: 768px) {
+    @include text(700, 30px, 40px);
+    right: 15%;
+    bottom: 24%;
+  }
 }
 
 .title {
@@ -32,6 +42,9 @@
   
   @media (max-width: 1024px) {
     @include text(500, 20px, 28px)
+  }
+  @media (max-width: 768px) {
+    @include text(500, 18px, 24px)
   }
 }
 
@@ -45,8 +58,12 @@
   @media (max-width: 1024px) {
     @include text(700, 20px, 28px)
   }
+  @media (max-width: 768px) {
+    @include text(700, 18px, 24px)
+  }
 }
 
 .text {
+  text-align: center;
   @include mix.text(400);
 }

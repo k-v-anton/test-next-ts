@@ -8,6 +8,15 @@
   letter-spacing: 0em;
   text-align: left;
   color: var.$BLUE;
+  @media (max-width: 1024px) {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 35px;
+  }
 }
 
 @mixin text($weight) {
@@ -28,6 +37,11 @@
   @media (max-width: 1024px) {
     font-size: 18px;
     line-height: 26px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 18px;
   }
 
 }

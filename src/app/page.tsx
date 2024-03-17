@@ -113,27 +113,29 @@ export default function Home() {
                 </div>
 
                <div className={styles.grid}>
-                  <div className={styles.lineOne}>
-                    <div className={`${styles.arrow} ${styles.first}`}></div>
-                    <div className={`${styles.arrow} ${styles.second}`}></div>
-
-                    {dataSecondBlock.firstLine.map((card) => (
-                      <CardInhalate
-                        key={card.id}
-                        id={card.id}
-                        title={card.title}
-                        subTitle={card.subtitle}
-                        text={card.text}
-                      />
-                    ))}
-                  </div>
-                  <div className={styles.lineTwo}>
-                    {dataSecondBlock.secondLine.map((card, index) => (
-                      <CardContainer key={index}>
-                        <p className={styles.text}>{card}</p>
-                      </CardContainer>
-                    ))}
-                  </div>
+                 <div className={styles.wrapper}>
+                    <div className={styles.lineOne}>
+                      <div className={`${styles.arrow} ${styles.first}`}></div>
+                      <div className={`${styles.arrow} ${styles.second}`}></div>
+  
+                      {dataSecondBlock.firstLine.map((card) => (
+                        <CardInhalate
+                          key={card.id}
+                          id={card.id}
+                          title={card.title}
+                          subTitle={card.subtitle}
+                          text={card.text}
+                        />
+                      ))}
+                    </div>
+                    <div className={styles.lineTwo}>
+                      {dataSecondBlock.secondLine.map((card, index) => (
+                        <CardContainer key={index}>
+                          <p className={styles.text}>{card}</p>
+                        </CardContainer>
+                      ))}
+                    </div>
+                 </div>
                </div>
               </Block>
             )}

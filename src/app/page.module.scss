@@ -22,7 +22,9 @@
   gap: 100px;
   padding-bottom: 93px;
 
-
+  @media (max-width: 768px) {
+    gap: 50px;
+  }
 }
 
 
@@ -37,47 +39,47 @@
   align-items: center;
   padding: 10px;
   width: 100%;
-  height: 83px;
-
   background: linear-gradient(90deg, #FDD966 0%, #BCD77E 68.54%);
   border-radius: 20px;
-
-
-
-
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
   line-height: 38px;
   text-align: center;
-
   color: #01457A;
 
+  @media (max-width: 1024px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
 
-
-
-
+  @media (max-width: 768px) {
+    font-size: 20px;
+    line-height: 25px;
+  }
 }
 
 .text2 {
-
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
   text-align: center;
-  color: #01457A;
-
-
+  @include mix.text(700)
 }
 
 
 .grid {
+
+  @media (max-width: 768px) {
+   overflow: hidden;
+  }
+}
+
+.wrapper {
   display: grid;
   width: 100%;
   gap: 80px;
+  overflow: auto;
+
+ 
 }
 
 .lineOne {
@@ -132,8 +134,6 @@
 
 
 .text {
-
-@include mix.text(400)
-
-
+  text-align: center;
+  @include mix.text(400)
 }
