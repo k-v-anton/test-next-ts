@@ -1,3 +1,5 @@
+@use '../../styles/mix.scss';
+
 @mixin text($fw, $fz, $lh) {
   font-family: 'Noto Sans';
   font-style: normal;
@@ -46,13 +48,5 @@
 }
 
 .text {
-  @include text(400, 24px, 33px);
-
-  @media (max-width: 1200px) {
-    @include text(500, 20px, 28px)
-  }
-
-  @media (max-width: 1024px) {
-    @include text(500, 18px, 26px)
-  }
+  @include mix.text(400);
 }

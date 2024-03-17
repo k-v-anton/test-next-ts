@@ -12,11 +12,22 @@
 
 @mixin text($weight) {
   font-family: 'Noto Sans';
-    font-style: normal;
-    font-weight: $weight;
-    font-size: 24px;
-    line-height: 33px;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: 24px;
+  line-height: 33px;
 
-    color: var.$BLUE;
+  color: var.$BLUE;
+
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 18px;
+    line-height: 26px;
+  }
 
 }

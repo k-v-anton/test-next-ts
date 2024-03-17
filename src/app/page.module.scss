@@ -1,4 +1,5 @@
 @use '../styles/var.scss';
+@use '../styles/mix.scss';
 
 .main {
   padding: 141px 0 117px;
@@ -6,6 +7,9 @@
   justify-content: center;
   background: linear-gradient(var.$WHITE, var.$LIGHT_BLUE);
   min-height: 100dvh;
+  position: relative;
+  user-select: none;
+  overflow: hidden;
 }
 
 .container {
@@ -97,7 +101,7 @@
 .arrow {
   position: absolute;
   width: 30%;
-  height: 100px;
+  height: 27px;
   bottom: 0;
   left: 50%;
   z-index: -1;
@@ -119,9 +123,17 @@
 }
 
 .first {
-  transform: translate(calc(-100% - 15px), 40%);
+  transform: translate(calc(-100% - 15px), 100%);
 }
 
 .second {
-  transform: translate(15px, 40%);
+  transform: translate(15px, 100%);
+}
+
+
+.text {
+
+@include mix.text(400)
+
+
 }

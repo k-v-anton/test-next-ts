@@ -6,6 +6,8 @@ import { CardContainer } from '@/components/cardContainer/CardContainer'
 import { CardInhalate } from '@/components/cardInhalait/CardInhalate'
 import { Arrow } from './svg/Arrow/Arrow'
 import { User } from './svg/User/User'
+import { HeaderLines } from './svg/headerLines/HeaderLines'
+import { Ship } from './svg/Ship/Ship'
 
 export default function Home() {
   type FirstBlockElementType = {
@@ -76,6 +78,10 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <Ship className={'first'}/>
+      <Ship className={'second'}/>
+
+      <HeaderLines/>
       <div className={styles.container}>
         {data.map((block) => (
           <>
@@ -89,6 +95,7 @@ export default function Home() {
                     secondTitle={item.secondTitle}
                     body={item.body}
                     reverse={item.reverse}
+                    id={item.id}
                   />
                 ))}
               </Block>
@@ -123,7 +130,7 @@ export default function Home() {
                   <div className={styles.lineTwo}>
                     {dataSecondBlock.secondLine.map((card, index) => (
                       <CardContainer key={index}>
-                        <p>{card}</p>
+                        <p className={styles.text}>{card}</p>
                       </CardContainer>
                     ))}
                   </div>
