@@ -15,12 +15,29 @@
   line-height: 41px;
   text-align: center;
   color: #01457A;
+
+  @media (max-width:1024px) {
+    font-size: 25px;
+    line-height: 29px;
+  }
+  @media (max-width:768px) {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 54px;
+
+  @media (max-width:1024px) {
+    gap: 20px;
+  }
+  @media (max-width:768px) {
+    gap: 10px;
+  }
 }
 
 .procent {
@@ -31,6 +48,16 @@
   line-height: 131px;
   text-align: center;
   color: #01457A;
+
+  @media (max-width:1024px) {
+    font-size: 45px;
+    line-height:50px;
+  }
+
+  @media (max-width:768px) {
+    font-size: 35px;
+    line-height:40px;
+  }
 }
 
 .subText {
@@ -41,6 +68,16 @@
   line-height: 25px;
   text-align: center;
   color: #01457A;
+
+  @media (max-width:1024px) {
+    font-size: 16px;
+    line-height:17px;
+  }
+
+  @media (max-width:1024px) {
+    font-size: 14px;
+    line-height:15px;
+  }
 }
 
 .text {

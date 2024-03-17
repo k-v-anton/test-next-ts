@@ -4,18 +4,17 @@
   gap: 15px;
   width: 100%;
 
-  /* Frame 11 */
-
-  /* Auto layout */
   align-items: center;
   padding: 30px 10px;
-
-
   background: rgba(253, 217, 102, 0.25);
   border-radius: 20px;
 
-
-
+  @media (max-width: 1024px) {
+    padding: 20px 10px;
+  }
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 }
 
 

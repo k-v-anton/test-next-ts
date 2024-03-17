@@ -52,28 +52,39 @@
   gap: 40px;
   position: relative;
   max-width: 1290px;
+  width: 100%;
   border: 1px solid #01457A;
   box-shadow: 0px 0px 25px rgba(142, 160, 173, 0.35);
   border-radius: 20px;
   margin: 45px;
 
   @include mix.text(400);
+
+  @media (max-width:1024px) {
+    margin: 10px;
+    width: 100%;
+    height: fit-content;
+  }
 }
 
 .close {
-  position: absolute;
+  position: fixed;
   border: none;
   background-color: transparent;
   top: 2rem;
   right: 2rem;
-  color: var.$WHITE;
+  color: var.$LIGHT_GREEN;
   transition: color .3s ease;
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 900;
   letter-spacing: 0.1em;
+  @media (max-width:1024px) {
+    top: 1rem;
+    right: 1rem;
+  }
 
   &:hover {
-    color: var.$LIGHT_GREEN;
+    color: var.$LIGHT_BLUE;
   }
 }
